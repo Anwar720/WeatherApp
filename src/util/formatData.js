@@ -7,7 +7,9 @@ const formatTimestampDate = (int_date)=>{
     time:date.toLocaleTimeString([],{ hour: "2-digit", minute: "2-digit" })
     }
 }
+
 const formatWeatherData = (dataObj)=>{
+    if(!dataObj) return {}
     let weather = {weekly:{},city:{}}
     weather.city.sunrise = formatTimestampDate(dataObj.city.sunrise).time;
     weather.city.sunset = formatTimestampDate(dataObj.city.sunset).time;
@@ -15,12 +17,16 @@ const formatWeatherData = (dataObj)=>{
     //format week forcast
     for(let hourData of dataObj.list){
         let dt = formatTimestampDate(hourData.dt);
-        console.log(dt.date)
-        weather.weekly[dt.date] = weather.weekly[dt.date] || []
-        hourData.day = dt;
-        weather.weekly[dt.date].push(hourData)
+        //initialize object for each day
+        weather.weekly[dt.date] = weather.weekly[dt.date] || {range:{min:1000,max:0},forcast:[]};
+        hourData.day = dt; // set day info
+        // temp range 
+        weather.weekly[dt.date].range.min = (weather.weekly[dt.date].range.min > hourData.main.temp)?hourData.main.temp:weather.weekly[dt.date].range.min;
+        weather.weekly[dt.date].range.max = (weather.weekly[dt.date].range.max < hourData.main.temp)?hourData.main.temp:weather.weekly[dt.date].range.max;
+        
+        weather.weekly[dt.date].forcast.push(hourData);
     }
-    return weather
+    return weather;
 }
 // console.log(formatTimestampDate(1683007200))
 export{
