@@ -1,10 +1,10 @@
 import Icon from "./Icon"
 
 const Main = (props) => {
-  // console.log(props.currentWeather)
-  const currWeather = props.currentWeather.forcast
+  const currWeather = props.currentWeather.forcast;
   return (
       <div className='main'>
+        {/* current temp */}
           <div className="main-tmp">
             <h3>{props.city.name}</h3>
             <h1>{Math.ceil(currWeather[0].main.temp)}°</h1>
@@ -20,7 +20,7 @@ const Main = (props) => {
             </div>
 
           <div className="main-stats">              
-              
+              {/* weather stats */}
               <section>
                 <p className="heighlight">{Math.ceil(currWeather[0].main.feels_like)}°</p>
                 <p> <i class="fa-solid fa-temperature-half"></i> Feels like</p>
@@ -47,10 +47,10 @@ const Main = (props) => {
               </section>
 
           </div>
+          {/* 3hour forcast */}
           <div className="slide">
             <div className="slide-frame">
               {currWeather.map((hour,key)=>{
-                console.log(hour)
                 return(
                   <div className="hour-card" key={key}>
                       <li>{Math.ceil(hour.main.temp)}°</li>

@@ -10,7 +10,7 @@ const Icon = (props) => {
         Other:"fa-solid fa-wind"
     }
     const name = codeToIcon[props.name] || codeToIcon.Other
-    console.log(props.name,name)
+    // console.log(props.name,name)
     return (
         <i class={name + " " + props.class}></i>
     )

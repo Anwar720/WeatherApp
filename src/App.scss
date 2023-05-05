@@ -18,13 +18,7 @@ $primary500:rgb(184, 184, 184);
   gap:1rem;
   overflow-wrap:anywhere;
 }
-.card{
-  height:max-height;
-  width:25rem;
-  background:rgb(68, 67, 65);
-  margin:1rem;
-  padding:0.5rem;
-}
+
 .top-bar{
   width:100%;
   // background:$primary-color;
@@ -185,17 +179,96 @@ $primary500:rgb(184, 184, 184);
   font-size: 0.9rem;
 }
 .week-forcast-container{
-  height:35rem;
   min-height: max-content;
-  width:100%;
-  // background:rgb(66, 64, 64);
-  border:1px solid white;
+  // width:30rem;
+  background:$primary-color;
   padding:1rem;
   border-radius: 1rem;
   display:grid;
-  grid-template-columns: 0.5fr 1fr;
-  gap:1rem;
+  grid-template-columns:1fr;
   max-width: 80rem;
   margin:auto;
   margin-top:3rem;
+}
+.z-5{
+  position:relative;
+  z-index: 5;
+}
+.card{
+  height:3.8rem;
+  // width:25rem;
+  background: rgb(34, 34, 35);
+  margin:1rem;
+  padding:0.5rem;
+  display:grid;
+  grid-template-columns: minmax(2rem,5rem) minmax(7rem,1.1fr)  1fr;
+  place-items: center;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  .icon-container i{
+    margin:-0.8rem 1.45rem auto auto;
+    position:relative;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.319);
+    padding:1rem;
+    border-radius: 100%;
+  }
+  .icon-container{
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: end;
+    // align-items: center;    
+  }
+  .icon-container::before{
+    content: '';
+    width:8rem;
+    height:7.5rem;
+    background-color: #a9b9c9e3;
+    position:absolute;
+    border-radius: 100%;    
+    margin:auto -1rem auto auto;
+    z-index: 0;
+    box-shadow: -17px -20px 0px 100px #a9b9c969,
+  -21px -116px 0px 250px #a1adb93e ;
+  }
+}
+.Clear .icon-container::before, .Thunderstorm .icon-container::before{
+  background-color: rgb(255, 255, 110);
+  box-shadow: -17px -20px  20px 100px rgba(255, 255, 110, 0.387),
+                -21px -116px 20px 250px rgba(255, 255, 110, 0.193);
+}
+.Rain .icon-container::before, .Thunderstorm .icon-container::before{
+  background-color: #559ee6dc !important;
+  box-shadow: -17px -20px 0px 100px #40668bdc,
+  -21px -116px 0px 250px #273542dc !important;
+}
+.Drizzle .icon-container::before{
+  background-color: #88b5e2dc !important;
+  box-shadow: -17px -20px 0px 100px #88b5e26b,
+  -21px -116px 0px 250px #88b5e249 !important;
+}
+.Snow .icon-container::before{
+  background-color: #ffffffdc !important;
+  box-shadow: -17px -20px 0px 100px #d7d7d7ae,
+  -21px -116px 0px 250px #d7d7d776 !important;
+}
+.tdown{
+  display: inline-block;
+  transform: translateY(5px);
+  color:rgb(209, 234, 255);
+  padding-right:0.5rem;
+}
+.tup{
+  display: inline-block;
+  transform: translateY(-5px);
+  color:rgb(255, 215, 209);
+  padding-left:0.5rem;
+}
+#selected-day{
+  border:1px solid rgb(102, 102, 101);
 }

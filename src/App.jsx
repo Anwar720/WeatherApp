@@ -7,7 +7,8 @@ import Main from './components/main';
 import WeekForcast from './components/WeekForcast';
 function App() {
   let today = new Date().toDateString().substring(4)
-  const [weather, setWeather] = useState(test)
+  const [weather, setWeather] = useState(test);
+  const [selectedDayWeather,setSelectedDayWeather] = useState(weather.weekly[today])
   let textInput = useRef(null)
 
   const getWeather = async (city)=>{
@@ -34,8 +35,8 @@ function App() {
       <div className="card-container">
         {weather&&
           <div>
-            <Main currentWeather = {weather.weekly[today]} city={weather.city}/>
-            <WeekForcast />
+            <Main currentWeather = {selectedDayWeather} city={weather.city}/>
+            <WeekForcast weather={weather} setDay={setSelectedDayWeather}/>
             
           </div>
         }
