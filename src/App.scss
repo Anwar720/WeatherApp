@@ -8,6 +8,7 @@ $primary500:rgb(184, 184, 184);
 }
 .container{
   width:100vw;
+  height:100vh;
 }
 .card-container{
   padding:1rem;
@@ -88,6 +89,8 @@ $primary500:rgb(184, 184, 184);
   gap:1rem;
   max-width: 80rem;
   margin:auto;
+  position: relative;
+  overflow: hidden;
 }
 .main{
   .main-tmp{
@@ -99,7 +102,21 @@ $primary500:rgb(184, 184, 184);
     padding:1rem;
     border-radius: 1rem;
     position:relative;
-    overflow: hidden;
+    // overflow: hidden;
+    .icon-wrapper{
+      width:10rem;
+      height:10rem;
+      background: black;
+    }
+    .Clear{
+      color:rgba(255, 255, 121, 0.826);
+      text-shadow: 0 0 10px rgb(147, 130, 0),
+                  0 0 50px rgb(255, 246, 120),
+                  0 0 70px rgb(253, 251, 216),
+                  0 0 100px rgb(249, 249, 239);
+    }
+
+    
   }
   .weather-icon{
     position:absolute;
@@ -107,8 +124,13 @@ $primary500:rgb(184, 184, 184);
     right:1rem;
     font-size: 3rem;
     color:lightblue;
+    text-shadow: 0 0 10px rgb(29, 90, 122),
+              0 0 50px rgb(176, 182, 190),
+              0 0 70px rgb(127, 128, 131),
+              0 0 150px rgb(97, 99, 102);
   }
 }
+
 .space-1{
   display: inline-block;
   width:1rem;
@@ -124,6 +146,7 @@ $primary500:rgb(184, 184, 184);
   grid-template-columns: repeat(auto-fit,minmax(6rem,25%));
   gap:3%;
   place-items: center;
+  position: relative;
 }
 .heighlight{
   font-size: 1.05rem;
@@ -141,6 +164,7 @@ $primary500:rgb(184, 184, 184);
   }
 }
 .slide{
+  margin-top:2rem;
   grid-column: 1 / 3;
   background:transparent;
   height:10rem;
@@ -148,6 +172,7 @@ $primary500:rgb(184, 184, 184);
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
+
 }
 .slide-frame{
   width:max-content;
@@ -260,15 +285,35 @@ $primary500:rgb(184, 184, 184);
 .tdown{
   display: inline-block;
   transform: translateY(5px);
-  color:rgb(209, 234, 255);
+  // color:rgb(209, 234, 255);
   padding-right:0.5rem;
 }
 .tup{
   display: inline-block;
   transform: translateY(-5px);
-  color:rgb(255, 215, 209);
+  // color:rgb(255, 215, 209);
   padding-left:0.5rem;
 }
 #selected-day{
   border:1px solid rgb(102, 102, 101);
+}
+.error{
+  width:100%;
+  padding:1rem;
+  text-transform: capitalize;
+  background-color: $primary-color;
+  height:5rem;
+  border-radius: 1rem;
+  span{
+    color:rgb(237, 91, 91);
+  }
+}
+.float{
+  position:absolute;
+  top:11.5rem;
+  right:0;
+  width:100%;
+  height:2rem;
+  padding-left:2rem;
+  border-bottom:1px solid rgb(63, 63, 63);
 }

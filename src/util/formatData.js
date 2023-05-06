@@ -23,6 +23,8 @@ const conditionRank = (condition)=>{
 
 const formatWeatherData = (dataObj)=>{
     if(!dataObj) return {}
+    if(dataObj.cod === '404') return dataObj;
+    
     let weather = {weekly:{},city:{}}
     weather.city.sunrise = formatTimestampDate(dataObj.city.sunrise).time;
     weather.city.sunset = formatTimestampDate(dataObj.city.sunset).time;

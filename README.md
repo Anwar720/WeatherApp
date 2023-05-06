@@ -1,1 +1,62 @@
-# WeatherApp
+
+
+
+<br />
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Weather Application helps view weather for any city around the world.
+
+
+
+### Built With
+
+This project is built using React and the openweathermap API.
+
+[![React][React.js]][React-url]
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+This project requires the latest version of NPM 
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Get a free API Key at [openweathermap.org](https://openweathermap.org/api)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/Anwar720/WeatherApp.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `.env`
+   ```js
+   API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+
+[React-url]: https://reactjs.org/
+
+

@@ -8,7 +8,7 @@ const Main = (props) => {
           <div className="main-tmp">
             <h3>{props.city.name}</h3>
             <h1>{Math.ceil(currWeather[0].main.temp)}°</h1>
-            <Icon name={currWeather[0].weather[0].main} class="weather-icon"/>
+              <Icon name={currWeather[0].weather[0].main} class={"weather-icon " + currWeather[0].weather[0].main}/>
             <p className="clr-suddle">{currWeather[0].weather[0].description}<br/></p>
             <span>
             H: {Math.ceil(props.currentWeather.range.max)}°
@@ -21,6 +21,7 @@ const Main = (props) => {
 
           <div className="main-stats">              
               {/* weather stats */}
+
               <section>
                 <p className="heighlight">{Math.ceil(currWeather[0].main.feels_like)}°</p>
                 <p> <i class="fa-solid fa-temperature-half"></i> Feels like</p>
@@ -47,6 +48,8 @@ const Main = (props) => {
               </section>
 
           </div>
+          <h4 className="float"><i class="fa-solid fa-calendar-day"></i> {currWeather[0].day.day} forcast</h4>
+
           {/* 3hour forcast */}
           <div className="slide">
             <div className="slide-frame">
