@@ -6,7 +6,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![preview](https://github.com/Anwar720/WeatherApp/blob/main/public/images/design.png)
+
 
 Weather Application helps view weather for any city around the world.
 
