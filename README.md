@@ -9,7 +9,7 @@
 ![preview](https://github.com/Anwar720/WeatherApp/blob/main/public/images/design.png)
 
 
-Weather Application helps view weather for any city around the world.
+Weather Application helps view weather for any city around the world. [view page live](https://anwar720.github.io/WeatherApp/)
 
 
 
@@ -18,7 +18,7 @@ Weather Application helps view weather for any city around the world.
 This project is built using React and the openweathermap API.
 
 [![React][React.js]][React-url]
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -48,6 +48,7 @@ This project requires the latest version of NPM
    ```js
    API_KEY = 'ENTER YOUR API';
    ```
+
 
 
 
