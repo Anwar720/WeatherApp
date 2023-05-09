@@ -14,7 +14,6 @@ function App() {
   const getWeather = async (city)=>{
     let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?units=imperial&q=${city}&appid=${import.meta.env.VITE_API_KEY}`)
     const jsonData = await response.json();
-    console.log(jsonData)
     let formattedWeather = formatWeatherData(jsonData)
     setWeather(prev=> formattedWeather)
     if(!formattedWeather || !formattedWeather.weekly) return
@@ -32,7 +31,6 @@ function App() {
       getWeather(localStorage.getItem('city'))
     }
   },[])
-
   return (
     <div className='container'>
       <TopBar textInput={textInput} handleClick={handleClick}/>
